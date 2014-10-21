@@ -13,26 +13,4 @@
       p Know good resources?
       button.btn.btn-primary.btn-lg data-target="#myModal" data-toggle="modal"
         | Add resource
-
-
-
-#myModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button.close data-dismiss="modal" type="button"
-          span aria-hidden="true"  &times;
-          span.sr-only Close
-        h4#myModalLabel.modal-title Modal title
-      .modal-body
-        p Sign in | Sign up
-        | FB or Github
-        h2 Add resource:
-        input.form-control placeholder="URL" type="text"
-        input.form-control placeholder="Title" type="text"
-        button.btn.btn-primary
-          | Add
-
-      .modal-footer
-        button.btn.btn-default data-dismiss="modal" type="button"  Close
-        button.btn.btn-primary type="button"  Save changes
+=render "resources/modal"
