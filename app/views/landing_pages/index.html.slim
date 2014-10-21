@@ -1,27 +1,11 @@
-.site-wrapper
-  .site-wrapper-inner
-    .cover-container
-      .masthead.clearfix
-        .inner
-          h3.masthead-brand Cover
-          ul.nav.masthead-nav
-            li.active
-              a href="#"  Home
-            li
-              a href="#"  Features
-            li
-              a href="#"  Contact
-      .inner.cover
-        h1.cover-heading I want to learn:
-        form.navbar-form.navbar-left role="search" 
+.intro-header
+  .container
+    .row
+      .col-lg-12
+        .intro-message
+          h1 I want to learn
           .form-group
-            input.form-control placeholder="Search" type="text" 
-        p.lead
-          a.btn.btn-lg.btn-default href="#"  Go
-      .mastfoot 
-        .inner
-          p
-            | Cover template for
-            | Bootstrap
-            | by
-            |@mdo
+            input.form-control placeholder="Search" type="text"
+          hr.intro-divider
+          = button_to "Go", "#", class: "btn btn-default btn-lg"
+
