@@ -14,7 +14,6 @@
   background: rgba(255, 255, 255, 0.85);
   border: none;
   color:#777;
-  text-transform: uppercase;
   display: inline-block;
   text-align: center;
   position:fixed;
@@ -40,4 +39,8 @@
 
 ul.pagination {
   margin-top: 5px;
+}
+
+.navbar-brand {
+  font-size: 25px;
 }
