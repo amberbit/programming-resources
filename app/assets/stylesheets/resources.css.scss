@@ -1,3 +1,31 @@
 // Place all the styles related to the resources controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-container {
+  padding-top: 70px;
+}
+
+.well {
+  background:rgba(255,255,255, 0.85);
+}
+
+.navbar-default {
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    color:#777;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    position:fixed;
+}
+
+.navbar-nav{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    float:none;
+    font-size: 1em;
+    font-weight: bold;
+}

@@ -9,6 +9,9 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
       a.navbar-brand href="#"  I want to learn:
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       form.navbar-form.navbar-left role="search"
-        .form-group
-          input.form-control placeholder="Search" type="text"
-        button.btn.btn-default type="submit"  Submit
+        .input-group.input-group-lg
+          span.input-group-addon
+            i.glyphicon.glyphicon-search
+          input.form-control type="text"
+            span.input-group-btn
+              button.btn.btn-default type="button"  Go!
