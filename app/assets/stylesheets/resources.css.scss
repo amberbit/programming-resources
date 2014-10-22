@@ -11,21 +11,23 @@
 }
 
 .navbar-default {
-    background: rgba(255, 255, 255, 0.85);
-    border: none;
-    color:#777;
-    text-transform: uppercase;
-    display: inline-block;
-    text-align: center;
-    position:fixed;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  color:#777;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  position:fixed;
 }
 
 .navbar-nav{
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    display: inline-block;
-    float:none;
-    font-size: 1em;
-    font-weight: bold;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  float:none;
+  font-size: 1em;
+  font-weight: bold;
 }
+
+
