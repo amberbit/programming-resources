@@ -14,15 +14,50 @@ body {
 .intro-header {
   text-align: center;
   color: #f8f8f8;
+
+  button.btn-primary {
+    margin-top: 30px;
+    font-size: 56px;
+  }
+
 }
 
 .intro-message {
   padding-top: 20%;
- h1 {
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.9);
-  font-size: 5em;
-  text-transform: uppercase;
+  h1 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.9);
+    font-size: 72px;
+    display: inline-block;
+  }
+  input {
+    margin-left: 0.3em;
+    display: inline-block;
+    width: 600px;
+    height: auto;
+    line-height: 72px;
+    font-size: 72px;
+    background: none;
+    border-width: 0 0 4px 0;
+    border-style: dotted;
+    border-color: white;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.9);
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .col-md-12 {
+    input {
+      width: 100%;
+      display: block;
+      margin-left: 0;
+    }
+
+    h1 {
+      text-align: left;
+      display: block;
+    }
   }
 }
 
