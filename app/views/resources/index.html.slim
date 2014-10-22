@@ -1,5 +1,4 @@
 =render "resources/header"
-
 .main-container.container
   .row
     .col-md-12
@@ -13,17 +12,13 @@
         li.pull-right
           a href='#'
             | Add resource
-
-
       - 5.times do
         .well
           p
             = link_to 'html for dummies', '#'
           p Ea munere ridens ceteros sed, agam ipsum neglegentur cu vis. Ne possim principes pertinacia nec, blandit dissentiet mea ut, et tation voluptatibus pro. Modo nominati vel te. Molestiae necessitatibus per ex, quis altera aliquip ad nec, harum dolor salutatus in vis. At ius quaeque corrumpit, legere melius eum ad, ut per atqui ocurreret laboramus. Id integre fabellas vix, no mea doming viderer liberavisse, at illum impetus usu.
-
-      .
   .row
-    .col-xs-6
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
       ul.pagination
         li
           a href='#'
@@ -37,7 +32,6 @@
           a href='#'
             | &raquo;
 
-    .col-xs-6
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6
       button.pull-right.btn.btn-primary.btn-lg data-target="#myModal" data-toggle="modal"
         | Add resource
-=render "resources/modal"
