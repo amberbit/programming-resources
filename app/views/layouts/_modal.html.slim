@@ -1,21 +1,20 @@
 #myModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
-  .modal-dialog
+  .modal-dialog.text-center
     .modal-content
       .modal-header
         button.close data-dismiss="modal" type="button"
           span aria-hidden="true"  &times;
           span.sr-only Close
-        h1#myModalLabel.modal-title.text-center Log in
+        h1#myModalLabel.modal-title Log in
       .modal-body
-        .container.text-center
-          .row
-            .col-sm-3
-              a.btn.btn-block.btn-social.btn-facebook
-                i.fa.fa-facebook
-                | Sign in with Facebook
-            .col-sm-3
-              a.btn.btn-block.btn-social.btn-github
-                i.fa.fa-github
-                | Sign in with Github
+        .row
+          .col-sm-6
+            a.btn.btn-block.btn-social.btn-facebook
+              i.fa.fa-facebook
+              | Sign in with Facebook
+          .col-sm-6
+            a.btn.btn-block.btn-social.btn-github
+              i.fa.fa-github
+              | Sign in with Github
       .modal-footer
 
