@@ -27,3 +27,5 @@ pickle-email-*.html
 /vendor/assets/bower_components
 *.bowerrc
 bower.json
+.ruby-gemset
+.ruby-version
