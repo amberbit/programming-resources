@@ -1,9 +1,11 @@
 /*
 *= require jquery.upvote
  *= require jquery-ui/autocomplete
+ *= require bootstrap-social
  *= require_self
  *= require_tree .
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";

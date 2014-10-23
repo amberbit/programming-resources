@@ -15,3 +15,4 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'slim'
 gem 'rails_12factor', group: :production
 gem 'jquery-ui-rails'
+gem "font-awesome-rails"
