@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'notes/index'
+  get 'links/index'
 
   root 'landing_pages#index'
 
