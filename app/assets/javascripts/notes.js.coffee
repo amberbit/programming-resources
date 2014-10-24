@@ -27,5 +27,4 @@ $ ->
     "Scheme"
   ]
   $("#topic").upvote()
-  $("#tags").autocomplete source: availableTags
-
+  $(".tags").autocomplete source: availableTags
