@@ -42,6 +42,8 @@ GEM
     execjs (2.2.2)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.3)
@@ -131,6 +133,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   font-awesome-rails
+  friendly_id (~> 5.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
