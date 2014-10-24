@@ -2,29 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  availableTags = [
-    "ActionScript"
-    "AppleScript"
-    "Asp"
-    "BASIC"
-    "C"
-    "C++"
-    "Clojure"
-    "COBOL"
-    "ColdFusion"
-    "Erlang"
-    "Fortran"
-    "Groovy"
-    "Haskell"
-    "Java"
-    "JavaScript"
-    "Lisp"
-    "Perl"
-    "PHP"
-    "Python"
-    "Ruby"
-    "Scala"
-    "Scheme"
-  ]
+  availableTags = gon.subjects if gon
   $("#topic").upvote()
   $(".tags").autocomplete source: availableTags
