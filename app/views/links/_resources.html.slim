@@ -2,11 +2,18 @@
   .well
     .text-center
       h1 Add resource:
-      p
-        input.form-control placeholder="URL" type="text"
-      p
-        input.form-control placeholder="Title" type="text"
-      p
-        textarea.form-control placeholder="Description" rows="3"
-      p
-        button.btn.btn-primary.btn-lg data-target="#myModal" data-toggle="modal" Add
+      = simple_form_for @link do |f|
+        - if @link.errors.any?
+          #error_explanation
+            h2
+              = pluralize(@link.errors.count, "error")
+              |  prohibited this link from being saved:
+            ul
+              - @link.errors.full_messages.each do |message|
+                li
+                  = message
+        = f.input :url
+        = f.input :title
+        = f.input :subject_id
+        = f.input :description
+        = f.button :submit
