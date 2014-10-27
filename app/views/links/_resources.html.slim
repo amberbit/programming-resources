@@ -1,8 +1,7 @@
 #resource.tab-pane
-  .well
-    .text-center
+  .well.text-center
       h1 Add resource:
-      = simple_form_for @link do |f|
+      = bootstrap_form_for(@link, layout: :horizontal, label_col: "col-sm-4 ", control_col: "col-sm-4") do |f|
         - if @link.errors.any?
           #error_explanation
             h2
@@ -12,8 +11,8 @@
               - @link.errors.full_messages.each do |message|
                 li
                   = message
-        = f.input :url
-        = f.input :title
-        = f.input :subject_name
-        = f.input :description
-        = f.button :submit
+        = f.text_field :url
+        = f.text_field :title
+        = f.text_field :subject_name
+        = f.text_area :description
+        = f.submit "Create offer", class: "btn-primary"

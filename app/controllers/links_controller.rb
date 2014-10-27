@@ -11,7 +11,7 @@ class LinksController < ApplicationController
       if @link.save
         format.html { redirect_to links_path, notice: 'Link was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render :index }
       end
     end
   end
