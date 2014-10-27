@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | Url:
+  = @link.url
+p
+  strong
+    | Title:
+  = @link.title
+p
+  strong
+    | Description:
+  = @link.description
+p
+  strong
+    | Subject:
+  = @link.subject
+= link_to 'Edit', edit_link_path(@link)
+|  | 
+= link_to 'Back', links_path
