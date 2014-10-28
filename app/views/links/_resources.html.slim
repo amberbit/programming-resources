@@ -1,6 +1,6 @@
 #resource.tab-pane
   .well.text-center
-      h1 Add resource:
+      h1 Add #{@subject.name} resource
       = bootstrap_nested_form_for( [:subject, @link], layout: :horizontal, label_col: "col-sm-4 ", control_col: "col-sm-4") do |f|
         - if @link.errors.any?
           #error_explanation
