@@ -8,11 +8,12 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-    @subject.links << @link
     respond_to do |format|
       if @link.save
+        @subject.links << @link
         format.html { redirect_to subject_links_path, notice: 'Link was successfully created.' }
       else
+        flash[:error]='Error! Please verify your data.'
         format.html { render :index }
       end
     end
