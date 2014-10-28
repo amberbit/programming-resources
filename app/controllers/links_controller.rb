@@ -9,7 +9,7 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
     respond_to do |format|
       if @link.save
-        format.html { redirect_to links_path, notice: 'Link was successfully created.' }
+        format.html { redirect_to subject_links, notice: 'Link was successfully created.' }
       else
         format.html { render :index }
       end
@@ -20,7 +20,7 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @link.destroy
     respond_to do |format|
-      format.html { redirect_to links_path, notice: 'Link was successfully destroyed.' }
+      format.html { redirect_to subject_links, notice: 'Link was successfully destroyed.' }
     end
   end
 

@@ -43,13 +43,9 @@ ActiveRecord::Schema.define(version: 20141028091431) do
     t.string   "url"
     t.string   "title"
     t.text     "description"
-    t.integer  "subject_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "subject_name"
   end
-
-  add_index "links", ["subject_id"], name: "index_links_on_subject_id", using: :btree
 
   create_table "subjects", force: true do |t|
     t.string   "name"

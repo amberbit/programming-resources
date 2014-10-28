@@ -4,7 +4,6 @@ class CreateLinks < ActiveRecord::Migration
       t.string :url
       t.string :title
       t.text :description
-      t.references :subject, index: true
 
       t.timestamps
     end

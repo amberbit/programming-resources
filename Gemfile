@@ -19,3 +19,4 @@ gem "font-awesome-rails"
 gem 'friendly_id', '~> 5.0.0'
 gem 'gon'
 gem 'bootstrap_form'
+gem "nested_form"
