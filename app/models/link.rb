@@ -1,8 +1,8 @@
 class Link < ActiveRecord::Base
-  belongs_to :subject
+  has_many :subjects
+  has_many :links, through: :linkings
   VALID_URL_REGEX = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/
-  validates :url, format: { with: VALID_URL_REGEX },
-                        uniqueness: { case_sensitive: false }
+  validates :url, format: { with: VALID_URL_REGEX }
   validates :title, :subject_name, :description,  presence: true
   before_save {
     subject_name.downcase!
