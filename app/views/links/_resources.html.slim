@@ -12,7 +12,7 @@
                 li
                   = message
         = f.text_field :url
-        = f.text_field :title
-        = f.text_field :subject_name
+        = f.text_field :title, label: "Article title"
+        = f.text_field :subject_name, label: "Article subject"
         = f.text_area :description
-        = f.submit "Create offer", class: "btn-primary"
+        = f.submit "Create resource", class: "btn-primary"
