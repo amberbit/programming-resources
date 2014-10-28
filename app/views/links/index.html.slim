@@ -1,5 +1,9 @@
 =render "links/header"
 .main-container.container
+  - flash.each do |name, msg|
+    div class=("alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}")
+      span.close data-dismiss="alert"  &times;
+      = msg
   .row
     .col-md-12
       - if !true
