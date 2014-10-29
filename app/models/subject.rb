@@ -3,6 +3,6 @@ class Subject < ActiveRecord::Base
   has_many :linkings
   has_many :links, through: :linkings
   friendly_id :name, use: :slugged
-  before_save { name.downcase! }
-  validates :name, :slug, uniqueness: true
+  validates :slug, uniqueness: true
+  validates :name, :slug, presence: true
 end
