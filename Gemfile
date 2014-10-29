@@ -12,4 +12,6 @@ gem 'rails_12factor', group: :production
 gem 'friendly_id', '~> 5.0.0'
 gem 'gon'
 gem 'bower-rails'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 

@@ -6,7 +6,7 @@
       = msg
   .row
     .col-md-12
-      - if !true
+      - if @links.empty?
         = render "links/noresults"
       - else
         ul.nav.nav-pills.sorting-options
@@ -17,6 +17,40 @@
           li.pull-right
              a data-toggle="pill" href="#resource"  Add resource
         .tab-content
-          = render "links/newest"
-          = render "links/popular"
-          = render "links/resources"
+          .tab-pane.active
+            - @links.each do |link|
+              ul.list-group
+                li.list-group-item
+                  span.badge
+                    #topic.upvote
+                      a.upvote data-target="#myModal" data-toggle="modal"
+                      span.count 0
+                      a.downvote data-target="#myModal" data-toggle="modal"
+                  p
+                    = link_to link.title, link.url, target: "_blank"
+                  p
+                    = link_to link.url do
+                      = link.description
+
+            .row.visible-lg.visible-md.visible-sm
+              .col-xs-12.col-sm-6.col-md-6.col-lg-6
+                = will_paginate @links, renderer: BootstrapPagination::Rails
+              .col-xs-12.col-sm-6.col-md-6.col-lg-6
+                button.pull-right.btn.btn-primary.btn-lg data-target="#myModal" data-toggle="modal"
+                  | Add resource
+            .row.hidden-lg.row.hidden-md.row.hidden-sm.text-center
+              .col-xs-12.col-sm-6.col-md-6.col-lg-6
+                ul.pagination
+                  li
+                    a href='#'
+                      | &laquo;
+                  - 5.times do |i|
+                    li class="#{'active' if i==1}"
+                      a href='#'
+                        = i + 1
+                  li
+                    a href='#'
+                      | &raquo;
+              .col-xs-12.col-sm-6.col-md-6.col-lg-6
+                button.btn.btn-primary.btn-lg.add-res-bot data-target="#myModal" data-toggle="modal"
+                  | Add resource

@@ -1,9 +1,7 @@
 class LinksController < ApplicationController
-  before_action :set_subject, only: [:index, :create]
-
   def index
-    @links = Link.all
-    @link = Link.new
+    @subject = Subject.where(slug: params[:subject_id]).first!
+    @links = @subject.links.paginate(page: params[:page], per_page: 10)
   end
 
   def create
@@ -29,7 +27,6 @@ class LinksController < ApplicationController
 
   private
     def set_subject
-      @subject = Subject.find(params[:subject_id])
     end
 
     def link_params
