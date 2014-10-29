@@ -1,17 +1,17 @@
-.intro-header
-  .intro-message
+.intro-header ng-controller="AutocompleteController"
+  form role='form' ng-submit='submit()' action="#"
+    .intro-message
+      .container
+        .row.visible-lg
+          .col-lg-12
+            h1 I want to learn
+            input.tags.ui-widget(type="text" spellcheck="false" autofocus ng-model='fieldValue' typeahead-editable='false' typeahead="subject as subject.name for subject in subjects | filter:$viewValue | limitTo:8")
+        .row.hidden-lg
+          .col-md-12
+            h1 I want to learn
+            input.tags.ui-widget(type="text" spellcheck="false" autofocus ng-model='fieldValue' typeahead-editable='false' typeahead="subject as subject.name for subject in subjects | filter:$viewValue | limitTo:8")
     .container
-      .row.visible-lg
+      .row
         .col-lg-12
-          h1 I want to learn
-          input.tags.ui-widget (type="text" spellcheck="false" autofocus)
-      .row.hidden-lg
-        .col-md-12
-          h1 I want to learn
-        .col-md-12
-           input.tags.ui-widget (type="text" spellcheck="false" autofocus)
-  .container
-    .row
-      .col-lg-12
-        button.btn.btn-primary.btn-lg.btn-block type="button"  Go!
+          button.btn.btn-primary.btn-lg.btn-block type="button" ng-disabled="fieldValue == null" ng-click="submit()" Go!
 

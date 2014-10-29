@@ -1,14 +1,9 @@
 /*
- *= require jquery.upvote
- *= require jquery-ui/autocomplete
+ *= require landing_pages
  *= require_self
- *= require_tree .
- *= require bootstrap-social
  */
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 .ui-widget {
   background: rgba(105, 105, 105, 0.9);

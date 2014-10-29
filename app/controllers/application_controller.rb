@@ -3,8 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_gon_values
-private
+
+  private
+
   def set_gon_values
-    gon.subjects = Subject.all.collect(&:name)
+    gon.subjects = Subject.all.collect
   end
 end
