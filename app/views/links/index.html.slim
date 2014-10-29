@@ -40,17 +40,7 @@
                   | Add resource
             .row.hidden-lg.row.hidden-md.row.hidden-sm.text-center
               .col-xs-12.col-sm-6.col-md-6.col-lg-6
-                ul.pagination
-                  li
-                    a href='#'
-                      | &laquo;
-                  - 5.times do |i|
-                    li class="#{'active' if i==1}"
-                      a href='#'
-                        = i + 1
-                  li
-                    a href='#'
-                      | &raquo;
+                = will_paginate @links, renderer: BootstrapPagination::Rails
               .col-xs-12.col-sm-6.col-md-6.col-lg-6
                 button.btn.btn-primary.btn-lg.add-res-bot data-target="#myModal" data-toggle="modal"
                   | Add resource
