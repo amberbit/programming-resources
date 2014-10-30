@@ -11,11 +11,11 @@
       - else
         ul.nav.nav-pills.sorting-options
           li.active
-            a data-toggle="pill" href="#newest"  Newest
+            = link_to "Popular", subject_links_path(@subject)
           li
-             a data-toggle="pill" href="#popular"  Popular
+             = link_to "Newest", "#"
           li.pull-right
-             a data-toggle="pill" href="#resource"  Add resource
+            = link_to "Add resource", new_subject_link_path(@subject)
         .tab-content
           .tab-pane.active
             - @links.each do |link|
