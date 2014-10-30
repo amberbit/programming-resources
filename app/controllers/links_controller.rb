@@ -25,13 +25,13 @@ class LinksController < ApplicationController
   end
 
   def vote_up
-    @link.votes = @link.votes + 1
+    @link.votes += 1
     @link.save
     redirect_to(subject_links_url)
   end
 
   def vote_down
-    @link.votes = @link.votes - 1
+    @link.votes -= 1
     @link.save
     redirect_to(subject_links_url)
   end
