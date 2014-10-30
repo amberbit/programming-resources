@@ -17,19 +17,21 @@
           li.pull-right
             = link_to "Add resource", new_subject_link_path(@subject)
         .tab-content
-          .tab-pane.active
+          .tab-pane.active.min-height
             - @links.each do |link|
               ul.list-group
-                li.list-group-item
+                li.list-group-item.min-height
                   span.badge
-                    #topic.upvote
-                      = link_to "+1", vote_up_subject_link_path(@subject, link)
+                    p
+                      = link_to image_tag("upvote.png"), vote_up_subject_link_path(@subject, link)
+                    p.votes-number
                       = link_to link.votes, '#'
-                      = link_to "-1", vote_down_subject_link_path(@subject, link)
+                    p
+                      = link_to image_tag("downvote.png"), vote_down_subject_link_path(@subject, link)
 
                   p
                     = link_to link.title, link.url, target: "_blank"
-                  p
+                  p.link-text
                     = link_to link.url do
                       = link.description
 
