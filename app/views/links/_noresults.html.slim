@@ -1,6 +1,4 @@
 .well
   p.text-center
     | No results found. Do you want to
-    p
-      button.btn.btn-primary.btn-lg.center-block data-target="#myModal" data-toggle="modal"
-        | Add one
+    = button_to "Add one", '#', class: "btn btn-primary btn-lg center-block", method: :get
