@@ -5,4 +5,5 @@ class Subject < ActiveRecord::Base
   friendly_id :name, use: :slugged
   validates :slug, uniqueness: true
   validates :name, :slug, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
 end
