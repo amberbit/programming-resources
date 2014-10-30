@@ -18,7 +18,7 @@ class LinksController < ApplicationController
         format.html { redirect_to subject_links_path, notice: 'Link was successfully created.' }
       else
         flash[:error]='Error! Please verify your data.'
-        format.html { render :index }
+        format.html { render :new }
       end
     end
   end
