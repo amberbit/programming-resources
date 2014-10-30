@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_subject, only: [:index, :new, :create]
+  before_action :set_link, only: [:vote_up, :vote_down]
 
   def index
     @links = @subject.links.paginate(page: params[:page], per_page: 10)
@@ -24,18 +25,12 @@ class LinksController < ApplicationController
   end
 
   def vote_up
-    @subject = Subject.where(slug: params[:subject_id]).first!
-    @link = Link.find(params[:id])
-
     @link.votes = @link.votes + 1
     @link.save
     redirect_to(subject_links_url)
   end
 
   def vote_down
-    @subject = Subject.where(slug: params[:subject_id]).first!
-    @link = Link.find(params[:id])
-
     @link.votes = @link.votes - 1
     @link.save
     redirect_to(subject_links_url)
@@ -43,11 +38,15 @@ class LinksController < ApplicationController
 
   private
 
-    def set_subject
-      @subject = Subject.where(slug: params[:subject_id]).first!
-    end
+  def set_link
+    @link = Link.find(params[:id])
+  end
 
-    def link_params
-      params.require(:link).permit(:url, :title, :description )
-    end
+  def set_subject
+    @subject = Subject.where(slug: params[:subject_id]).first!
+  end
+
+  def link_params
+    params.require(:link).permit(:url, :title, :description )
+  end
 end
