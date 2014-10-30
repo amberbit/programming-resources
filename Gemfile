@@ -13,7 +13,10 @@ gem 'gon'
 gem 'bower-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'bootstrap_form'
+gem "nested_form"
 gem "foreman"
+
 
 group :production, :staging do
   gem "rails_12factor"

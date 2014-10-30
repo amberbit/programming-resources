@@ -1,10 +1,16 @@
 class LinksController < ApplicationController
+  before_action :set_subject, only: [:index, :new, :create]
+
   def index
-    @subject = Subject.where(slug: params[:subject_id]).first!
     @links = @subject.links.paginate(page: params[:page], per_page: 10)
   end
 
+  def new
+    @link = Link.new
+  end
+
   def create
+    @links = @subject.links
     @link = Link.new(link_params)
     respond_to do |format|
       if @link.save
@@ -17,16 +23,10 @@ class LinksController < ApplicationController
     end
   end
 
-  def destroy
-    @link = Link.find(params[:id])
-    @link.destroy
-    respond_to do |format|
-      format.html { redirect_to subject_links_path, notice: 'Link was successfully destroyed.' }
-    end
-  end
-
   private
+
     def set_subject
+      @subject = Subject.where(slug: params[:subject_id]).first!
     end
 
     def link_params
