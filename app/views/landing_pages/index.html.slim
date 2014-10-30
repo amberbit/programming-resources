@@ -13,5 +13,5 @@
     .container
       .row
         .col-lg-12
-          button.btn.btn-primary.btn-lg.btn-block type="button" ng-disabled="fieldValue == null" ng-click="submit()" Go!
+          button.btn.btn-primary.btn-lg.btn-block type="button" ng-disabled="fieldValue == null || fieldValue.length == 0" ng-click="submit()" Go!
 
