@@ -1,18 +1,4 @@
-.well.no-results
+.well
   p.text-center
     | No results found. Do you want to
-    p
-      button.btn.btn-primary.btn-lg.center-block.to-form
-        | Add one
-
-.well.add-resource.add-form
-  .text-center
-    h1 Add resource:
-    p
-      input.form-control placeholder="URL" type="text"
-    p
-      input.form-control placeholder="Title" type="text"
-    p
-      textarea.form-control placeholder="Description" rows="3"
-    p
-      button.btn.btn-primary.btn-lg data-target="#myModal" data-toggle="modal" Add
+    = button_to "Add one", '#', class: "btn btn-primary btn-lg center-block", method: :get
