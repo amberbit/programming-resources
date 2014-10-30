@@ -10,7 +10,7 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation" ng-controller="Auto
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       form.navbar-form.navbar-left role="form" ng-submit='submit()' action="#"
         .input-group.input-group-lg
-          input.form-control.tags(type="text" spellcheck="false" autofocus ng-model='fieldValue' typeahead-editable='false' typeahead="subject as subject.name for subject in subjects | filter:$viewValue | limitTo:8")
+          input.form-control.tags(type="text" spellcheck="false" autofocus ng-model='fieldValue' placeholder="#{@subject.name}"  typeahead-editable='false' typeahead="subject as subject.name for subject in subjects | filter:$viewValue | limitTo:8")
             span.input-group-btn
                button.btn.btn-primary.btn-lg.btn-block type="button" ng-disabled="fieldValue == null || fieldValue.length == 0" ng-click="submit()" Go!
       .nav.navbar-nav.navbar-right data-target="#myModal" data-toggle="modal"
