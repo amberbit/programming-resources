@@ -23,6 +23,24 @@ class LinksController < ApplicationController
     end
   end
 
+  def vote_up
+    @subject = Subject.where(slug: params[:subject_id]).first!
+    @link = Link.find(params[:id])
+
+    @link.votes = @link.votes + 1
+    @link.save
+    redirect_to(subject_links_url)
+  end
+
+  def vote_down
+    @subject = Subject.where(slug: params[:subject_id]).first!
+    @link = Link.find(params[:id])
+
+    @link.votes = @link.votes - 1
+    @link.save
+    redirect_to(subject_links_url)
+  end
+
   private
 
     def set_subject
