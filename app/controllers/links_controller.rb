@@ -23,10 +23,12 @@ class LinksController < ApplicationController
     end
   end
 
-  def vote
+  def score
     @link = Link.find(params[:id])
+    @linking = Linking.find(@link)
+    @scores = @linking.scores
     value = params[:value] == "up" ? 1 : -1
-    @link.increment!(:votes, value)
+    @linking.increment!(:scores, value)
     redirect_to :back
   end
 

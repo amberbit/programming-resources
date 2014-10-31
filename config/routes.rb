@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :subjects do
     resources :links,  only: [:index, :new, :create] do
       member do
-        get 'vote'
+        get 'score'
       end
     end
   end
