@@ -1,6 +1,5 @@
 class LinksController < ApplicationController
   before_action :set_subject, only: [:index, :new, :create]
-  before_action :set_link, only: [:vote_up, :vote_down]
 
   def index
     @links = @subject.links.paginate(page: params[:page], per_page: 10)
@@ -24,23 +23,14 @@ class LinksController < ApplicationController
     end
   end
 
-  def vote_up
-    @link.votes += 1
-    @link.save
-    redirect_to(subject_links_url)
-  end
-
-  def vote_down
-    @link.votes -= 1
-    @link.save
-    redirect_to(subject_links_url)
+  def vote
+    @link = Link.find(params[:id])
+    value = params[:value] == "up" ? 1 : -1
+    @link.increment!(:votes, value)
+    redirect_to :back
   end
 
   private
-
-  def set_link
-    @link = Link.find(params[:id])
-  end
 
   def set_subject
     @subject = Subject.where(slug: params[:subject_id]).first!

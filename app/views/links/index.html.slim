@@ -22,10 +22,10 @@
               ul.list-group
                 li.list-group-item.min-height
                   span.badge
-                    = link_to image_tag("upvote.png"), vote_up_subject_link_path(@subject, link)
+                    = link_to image_tag("upvote.png"), vote_subject_link_path(@subject, link, value: "up")
                     .votes-number
                       = link.votes
-                    = link_to image_tag("downvote.png"), vote_down_subject_link_path(@subject, link)
+                    = link_to image_tag("downvote.png"), vote_subject_link_path(@subject, link, value: "down")
 
                   p
                     = link_to link.title, link.url, target: "_blank"
