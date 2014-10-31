@@ -24,7 +24,7 @@
                   span.badge
                     = link_to image_tag("upvote.png"), score_subject_link_path(@subject, link, value: "up")
                     .votes-number
-                      = @scores
+                      = Linking.find_by(link_id: link).scores
                     = link_to image_tag("downvote.png"), score_subject_link_path(@subject, link, value: "down")
 
                   p
