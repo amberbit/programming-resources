@@ -28,7 +28,7 @@ class LinksController < ApplicationController
     @linking = Linking.find(@link)
     value = params[:value] == "up" ? 1 : -1
     @linking.increment!(:scores, value)
-    redirect_to :back
+    redirect_to :back, notice: "Thank you for voting"
   end
 
   private
