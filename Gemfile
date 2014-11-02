@@ -16,7 +16,7 @@ gem 'will_paginate-bootstrap'
 gem 'bootstrap_form'
 gem "nested_form"
 gem "foreman"
-
+gem "jquery-rails"
 
 group :production, :staging do
   gem "rails_12factor"

@@ -19,13 +19,14 @@
         .tab-content
           .tab-pane.active
             - @links.each do |link|
+              - linking = link.linkings.where(subject_id: @subject.id).first
               ul.list-group
                 li.list-group-item.min-height
                   span.badge
-                    = link_to image_tag("upvote.png"), score_subject_link_path(@subject, link, value: "up")
+                    = link_to image_tag("upvote.png"), votes_path(linking_id: linking.id, value: "up"), method: :post
                     .votes-number
-                      = Linking.find_by(link_id: link).scores
-                    = link_to image_tag("downvote.png"), score_subject_link_path(@subject, link, value: "down")
+                      = linking.scores
+                    = link_to image_tag("downvote.png"), votes_path(linking_id: linking.id, value: "down"), method: :post
 
                   p
                     = link_to link.title, link.url, target: "_blank"
