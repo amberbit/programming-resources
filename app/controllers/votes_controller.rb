@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  respond_to :html, :js
+
   def create
     @linking = Linking.find(params[:linking_id])
 
