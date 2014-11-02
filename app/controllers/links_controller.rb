@@ -23,14 +23,6 @@ class LinksController < ApplicationController
     end
   end
 
-  def score
-    @link = Link.find(params[:id])
-    @linking = Linking.find(@link)
-    value = params[:value] == "up" ? 1 : -1
-    @linking.increment!(:scores, value)
-    redirect_to :back
-  end
-
   private
 
   def set_subject

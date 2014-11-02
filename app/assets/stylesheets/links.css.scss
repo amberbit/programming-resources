@@ -102,3 +102,17 @@ textarea { resize: vertical; }
     list-style: square;
   }
 }
+
+.votebuttonup {
+    background: image-url("upvote.png") no-repeat;
+    width: 25px;
+    height: 20px;
+    border: none;
+}
+
+.votebuttondown {
+    background: image-url("downvote.png") no-repeat;
+    width: 25px;
+    height: 20px;
+    border: none;
+}

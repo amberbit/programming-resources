@@ -22,15 +22,14 @@
               ul.list-group
                 li.list-group-item.min-height
                   span.badge
-                    = link_to image_tag("upvote.png"), score_subject_link_path(@subject, link, value: "up")
+                    = button_to "", votes_path(id: link, score: "up"), class: "votebuttonup"
                     .votes-number
                       = Linking.find_by(link_id: link).scores
-                    = link_to image_tag("downvote.png"), score_subject_link_path(@subject, link, value: "down")
-
+                    = button_to "", votes_path(id: link, score: "down"), class: "votebuttondown"
                   p
                     = link_to link.title, link.url, target: "_blank"
                   p.link-text
-                    = link_to link.url do
+                    = link_to link.url, target: "_blank" do
                       = link.description
 
             .row.visible-lg.visible-md.visible-sm
