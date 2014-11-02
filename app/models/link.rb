@@ -1,7 +1,7 @@
 class Link < ActiveRecord::Base
   before_validation :add_protocol
-  has_many :subjects
-  has_many :links, through: :linkings
+  has_many :linkings
+  has_many :subjects, through: :linkings
   VALID_URL_REGEX = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/
   validates :url, format: { with: VALID_URL_REGEX }
   validates :title, :description,  presence: true

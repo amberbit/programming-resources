@@ -20,16 +20,16 @@
           .tab-pane.active
             - @links.each do |link|
               ul.list-group
-                li.list-group-item
+                li.list-group-item.min-height
                   span.badge
-                    #topic.upvote
-                      a.upvote data-target="#myModal" data-toggle="modal"
-                      span.count 0
-                      a.downvote data-target="#myModal" data-toggle="modal"
+                    = button_to "", votes_path(id: link, score: "up"), class: "votebuttonup"
+                    .votes-number
+                      = Linking.find_by(link_id: link).scores
+                    = button_to "", votes_path(id: link, score: "down"), class: "votebuttondown"
                   p
                     = link_to link.title, link.url, target: "_blank"
-                  p
-                    = link_to link.url do
+                  p.link-text
+                    = link_to link.url, target: "_blank" do
                       = link.description
 
             .row.visible-lg.visible-md.visible-sm

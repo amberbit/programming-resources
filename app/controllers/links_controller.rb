@@ -25,11 +25,11 @@ class LinksController < ApplicationController
 
   private
 
-    def set_subject
-      @subject = Subject.where(slug: params[:subject_id]).first!
-    end
+  def set_subject
+    @subject = Subject.where(slug: params[:subject_id]).first!
+  end
 
-    def link_params
-      params.require(:link).permit(:url, :title, :description )
-    end
+  def link_params
+    params.require(:link).permit(:url, :title, :description )
+  end
 end
