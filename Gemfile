@@ -18,6 +18,7 @@ gem 'nested_form'
 gem 'foreman'
 gem 'jquery-rails'
 gem 'omniauth'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :production, :staging do
   gem 'rails_12factor'
