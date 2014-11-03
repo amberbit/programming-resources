@@ -2,8 +2,7 @@ class LinksController < ApplicationController
   before_action :set_subject, only: [:index, :new, :create]
 
   def index
-    value = params[:value]
-    if value == "newest"
+    if params[:order] == "newest"
       @links = @subject.links.paginate(page: params[:page], per_page: 10).newest
     else
       @links = @subject.links.paginate(page: params[:page], per_page: 10).popular
