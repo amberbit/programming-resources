@@ -19,16 +19,18 @@
         .tab-content
           .tab-pane.active
             - @links.each do |link|
+              - linking = link.linkings.where(subject_id: @subject.id).first
               ul.list-group
-                li.list-group-item
+                li.list-group-item.min-height
                   span.badge
-                    #topic.upvote
-                      a.upvote data-target="#myModal" data-toggle="modal"
-                      span.count 0
-                      a.downvote data-target="#myModal" data-toggle="modal"
+                    = link_to image_tag("upvote.png"), votes_path(linking_id: linking.id, value: "up"), method: :post
+                    .votes-number
+                      = linking.scores
+                    = link_to image_tag("downvote.png"), votes_path(linking_id: linking.id, value: "down"), method: :post
+
                   p
                     = link_to link.title, link.url, target: "_blank"
-                  p
+                  p.link-text
                     = link_to link.url do
                       = link.description
 
