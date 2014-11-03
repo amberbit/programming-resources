@@ -17,7 +17,7 @@ gem 'bootstrap_form'
 gem 'nested_form'
 gem 'foreman'
 gem 'jquery-rails'
-gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'dotenv-rails', groups: [:development, :test]
 
 group :production, :staging do
