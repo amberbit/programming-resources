@@ -19,6 +19,7 @@ gem 'foreman'
 gem 'jquery-rails'
 gem 'omniauth-facebook'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'omniauth-bitbucket'
 
 group :production, :staging do
   gem 'rails_12factor'
