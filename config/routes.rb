@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   root 'landing_pages#index'
-  match "/auth/:provider/callback" => "sessions#create", via:  :post
-  match "/signout" => "sessions#destroy", as: :signout, via:  :post
+  get 'auth/:provider/callback' => 'sessions#create', as: 'signin'
+  post 'signout' => 'sessions#destroy', as: 'signout'
 
   resources :subjects do
     resources :links,  only: [:index, :new, :create]
