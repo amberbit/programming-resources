@@ -1,4 +1,4 @@
 asset 'angular'
 asset 'bootstrap-sass-official'
 asset 'angular-bootstrap'
-
+asset 'components-font-awesome'
