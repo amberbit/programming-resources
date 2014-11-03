@@ -2,8 +2,8 @@
  *= require_self
  *= require landing_pages
  *= require links
- *= require components-font-awesome/css/font-awesome
  *= require bootstrap-social
  */
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "components-font-awesome/css/font-awesome"
