@@ -5,6 +5,9 @@ class Link < ActiveRecord::Base
   VALID_URL_REGEX = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/
   validates :url, format: { with: VALID_URL_REGEX }
   validates :title, :description,  presence: true
+  scope :newest, ->{ order('created_at DESC') }
+  scope :popular, ->{ joins(:linkings).order("linkings.scores DESC")}
+
 
   protected
     def add_protocol

@@ -10,10 +10,10 @@
         = render "links/noresults"
       - else
         ul.nav.nav-pills.sorting-options
-          li.active
-            = link_to "Popular", subject_links_path(@subject)
-          li
-             = link_to "Newest", "#"
+          li.popular.active
+            = link_to "Popular", subject_links_path(@subject, order: "popular")
+          li.newest
+             = link_to "Newest", subject_links_path(@subject, order: "newest")
           li.pull-right
             = link_to "Add resource", new_subject_link_path(@subject)
         .tab-content
