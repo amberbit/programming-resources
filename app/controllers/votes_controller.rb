@@ -5,8 +5,10 @@ class VotesController < ApplicationController
     @linking = Linking.find(params[:linking_id])
 
     if params[:value] == "up"
+      @vote = Vote.create(user_id: @current_user, linking_id: @linking)
       @linking.increment!(:scores)
     elsif params[:value] == "down"
+      @vote = Vote.create(user_id: @current_user, linking_id: @linking)
       @linking.decrement!(:scores)
     else
       flash[:error] = 'Something went wrong.'
