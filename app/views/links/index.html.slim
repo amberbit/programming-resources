@@ -9,10 +9,10 @@
       - if @links.empty?
         = render "links/noresults"
       - else
-        ul.nav.nav-pills.sorting-options
-          li.popular.active
+        ul.nav.nav-pills.sorting-options ng-controller="PillsCtrl"
+          li ng-class="popular"
             = link_to "Popular", subject_links_path(@subject, order: "popular")
-          li.newest
+          li ng-class="newest"
              = link_to "Newest", subject_links_path(@subject, order: "newest")
           li.pull-right
             = link_to "Add resource", new_subject_link_path(@subject)

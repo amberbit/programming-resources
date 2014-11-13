@@ -7,3 +7,9 @@ module.controller("AutocompleteController", ['$scope', ($scope) ->
   $scope.submit = ->
     window.location = "/subjects/#{$scope.fieldValue.slug}/links"
 ])
+
+module.controller "PillsCtrl", ($scope)->
+  if window.location.search is "?order=newest"
+    $scope.newest = "active"
+  else
+    $scope.popular = "active"
